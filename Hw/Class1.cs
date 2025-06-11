@@ -18,20 +18,33 @@ namespace Hw
 {
     internal class MatrixArray
     {
-
-        static public void RandomMatrix(int[][] matrix)
+        static public void RandomMatrix(double[][] matrix)
         {
             Random rnd = new Random();
-            int randomint = rnd.Next(0, 25);
-
 
             for (int i = 0; i < matrix.Length; i++)
             {
                 for (int j = 0; j < matrix[i].Length; j++)
                 {
-                    matrix[i][j] = rnd.Next(j);
+                    matrix[i][j] = rnd.NextDouble() * 100;
                 }
+            }
+        }
+
+        public static void Output(double[][] matrix)
+        {
+
+            Console.WriteLine("Matrix array");
+
+            foreach (double[] row in matrix) 
+            {
+                foreach (double value in row)
+                {
+                    Console.Write($"{value:F2} ");
+                }
+                Console.WriteLine();
             }
         }
     }
 }
+

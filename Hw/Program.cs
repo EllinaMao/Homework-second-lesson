@@ -90,12 +90,18 @@
     {
         static void Main(string[] args)
         {
-            int[] a = new int[5];
+            int[] A = new int[5];
 
-            SmallArray.InitializeFromUserInput(a);
-            SmallArray.OutArray(a);
+            SmallArray.InitializeFromUserInput(A);
+            SmallArray.OutArray(A);
 
 
+            double[][] B = new double[3][];
+            for (int i = 0; i < B.Length; i++)
+                B[i] = new double[4];
+
+            MatrixArray.RandomMatrix(B);
+            MatrixArray.Output(B);
         }
     }
 }

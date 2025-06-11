@@ -32,10 +32,18 @@ namespace Hw
 
         public static void OutArray(int[] a)
         {
+
+            Console.WriteLine("Small array");
+
             foreach (int i in a)
             {
                 Console.Write(i + " ");
             }
+            Console.WriteLine();
         }
+
+
+
+
     }
 }   
