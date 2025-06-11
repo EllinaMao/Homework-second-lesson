@@ -18,7 +18,7 @@ namespace Hw
 {
     internal class MatrixArray
     {
-        static public void RandomMatrix(double[][] matrix)
+        static public void RandomMatrix(int[][] matrix)
         {
             Random rnd = new Random();
 
@@ -26,21 +26,21 @@ namespace Hw
             {
                 for (int j = 0; j < matrix[i].Length; j++)
                 {
-                    matrix[i][j] = rnd.NextDouble() * 100;
+                    matrix[i][j] = rnd.Next(-100, 100);
                 }
             }
         }
 
-        public static void Output(double[][] matrix)
+        public static void Output(int[][] matrix)
         {
 
             Console.WriteLine("Matrix array");
 
-            foreach (double[] row in matrix) 
+            foreach (int[] row in matrix) 
             {
-                foreach (double value in row)
+                foreach (int value in row)
                 {
-                    Console.Write($"{value:F2} ");
+                    Console.Write($"{value,4} ");
                 }
                 Console.WriteLine();
             }

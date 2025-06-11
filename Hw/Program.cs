@@ -96,9 +96,9 @@
             SmallArray.OutArray(A);
 
 
-            double[][] B = new double[3][];
+            int[][] B = new int[3][];
             for (int i = 0; i < B.Length; i++)
-                B[i] = new double[4];
+                B[i] = new int[4];
 
             MatrixArray.RandomMatrix(B);
             MatrixArray.Output(B);
