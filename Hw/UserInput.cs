@@ -30,7 +30,7 @@ namespace homework
                 try
                 {
                     double number = Convert.ToDouble(Console.ReadLine());
-                    Console.Beep(); //^-^
+                    //Console.Beep(); //^-^
                     return number;
                 }
                 catch (Exception ex)

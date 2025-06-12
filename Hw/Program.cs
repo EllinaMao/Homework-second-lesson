@@ -102,6 +102,15 @@
 
             MatrixArray.RandomMatrix(B);
             MatrixArray.Output(B);
+
+            int max = ArifmeticOperations.FindSimilarMax(A, B);
+            Console.WriteLine($"Общий максимальный элемент: {max}");
+
+
+            int min = ArifmeticOperations.FindSimilarMin(A, B);
+            Console.WriteLine($"Общий минимальный элемент: {min}");
+
+
         }
     }
 }
