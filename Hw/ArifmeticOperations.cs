@@ -224,7 +224,7 @@ namespace Hw
 
             if (colsA != rowsB)
                 throw new ArgumentException("Number of columns in first matrix must equal number of rows in second matrix.");
-
+            
             int[,] result = new int[rowsA, colsB];
 
             for (int i = 0; i < rowsA; i++)
