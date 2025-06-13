@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace homework
 {
-    internal static class UserInput
+    public static class UserInput
     {
         public static int GetIntFromUser()
         {
@@ -15,7 +15,7 @@ namespace homework
                 try
                 {
                     int number = Convert.ToInt32(Console.ReadLine());
-                    Console.Beep(); //^-^
+                    //Console.Beep(); //^-^
                     return number;
                 }
                 catch (Exception ex)
@@ -30,7 +30,7 @@ namespace homework
                 try
                 {
                     double number = Convert.ToDouble(Console.ReadLine());
-                    //Console.Beep(); //^-^
+                    Console.Beep(); //^-^
                     return number;
                 }
                 catch (Exception ex)

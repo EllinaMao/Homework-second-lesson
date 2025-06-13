@@ -16,34 +16,41 @@ using System.Threading.Tasks;
  */
 namespace Hw
 {
-    internal class MatrixArray
+    public static class MatrixArray
     {
-        static public void RandomMatrix(int[][] matrix)
+        static public void RandomMatrix(int[,] matrix, int min, int max)
         {
             Random rnd = new Random();
 
-            for (int i = 0; i < matrix.Length; i++)
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < matrix[i].Length; j++)
+                for (int j = 0; j < cols; j++)
                 {
-                    matrix[i][j] = rnd.Next(-100, 100);
+                    matrix[i, j] = rnd.Next(min, max);
                 }
             }
         }
 
-        public static void Output(int[][] matrix)
+        public static void Output(int[,] matrix)
         {
 
             Console.WriteLine("Matrix array");
 
-            foreach (int[] row in matrix) 
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
             {
-                foreach (int value in row)
+                for (int j = 0; j < cols; j++)
                 {
-                    Console.Write($"{value,4} ");
+                    Console.Write("{0,4}", matrix[i,j] );
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("...........................................");
         }
     }
 }

@@ -39,7 +39,9 @@ namespace Hw
             {
                 Console.Write(i + " ");
             }
-            Console.WriteLine();
+
+            Console.WriteLine("\n...........................................");
+
         }
 
 
