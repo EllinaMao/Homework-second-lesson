@@ -26,7 +26,7 @@ namespace Task5
             int result = 0;
             foreach (Match match in matches)
             {
-                result += int.Parse(match.Value);
+                result += int.Parse(match.Value);//парсим строку, добавляем числа со знаком + или - перед ними
             }
 
             return result;
