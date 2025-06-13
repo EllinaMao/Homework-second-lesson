@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Hw
 {
@@ -233,6 +234,9 @@ namespace Hw
                         result[i, j] += matrixA[i, k] * matrixB[k, j];
 
             return result;
+
+
+
         }
     }
 }
