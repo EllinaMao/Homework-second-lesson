@@ -21,14 +21,28 @@ namespace Task6
     {
         public static string Task6(string source)
         {
-            var pattern = @"(^|[.!?])\s*([a-zа-яё])";
-            var result = Regex.Replace(
-                source,
-                pattern,
-                match => match.Groups[1].Value + match.Groups[2].Value.ToUpper(),
-                RegexOptions.IgnoreCase | RegexOptions.CultureInvariant
-            );
-            return result;
+            var sb = new StringBuilder(source.Length);
+            bool newSentence = true;
+
+            foreach (char c in source)
+            {
+                if (newSentence && char.IsLetter(c))
+                {
+                    sb.Append(char.ToUpper(c));
+                    newSentence = false;
+                }
+                else
+                {
+                    sb.Append(c);
+                }
+
+                if (c == '.' || c == '!' || c == '?')
+                    newSentence = true;
+                else if (!char.IsWhiteSpace(c) && c != '.' && c != '!' && c != '?')
+                    newSentence = false;
+            }
+
+            return sb.ToString();
         }
     }
 }
