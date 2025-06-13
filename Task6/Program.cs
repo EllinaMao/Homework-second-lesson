@@ -16,9 +16,10 @@
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите какой то текст");
             string Userinput = Input.UserInput.GetStringFromUser();
-
-
+            string result = ParceString.Task6(Userinput);
+            Console.WriteLine(result);
         }
     }
 }

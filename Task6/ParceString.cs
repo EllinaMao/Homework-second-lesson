@@ -19,14 +19,16 @@ namespace Task6
 {
     internal class ParceString
     {
-        public void Task6(string source)
+        public static string Task6(string source)
         {
-            var pattern = @"(^|[.!?])\s*([a-z])";
-            var result = Regex.Replace(source, pattern, match =>
-            {
-                return match.Groups[1].Value + match.Groups[2].Value.ToUpper();
-            });
-            Console.WriteLine(result);
+            var pattern = @"(^|[.!?])\s*([a-zа-яё])";
+            var result = Regex.Replace(
+                source,
+                pattern,
+                match => match.Groups[1].Value + match.Groups[2].Value.ToUpper(),
+                RegexOptions.IgnoreCase | RegexOptions.CultureInvariant
+            );
+            return result;
         }
     }
 }
