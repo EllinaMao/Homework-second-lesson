@@ -179,6 +179,60 @@ namespace Hw
             return sum;
         }
 
+        public static int[,] MultiplyByNumber(int[,] matrix, int number)
+        {
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+            int[,] result = new int[rows, cols];
 
+            for (int i = 0; i < rows; i++)
+                for (int j = 0; j < cols; j++)
+                    result[i, j] = matrix[i, j] * number;
+
+            return result;
+        }
+
+        static public int[,] SummOfMatrix(int[,] matrixA, int[,] matrixB)
+        {
+            int rowsA = matrixA.GetLength(0);
+            int colsA = matrixA.GetLength(1);
+            int rowsB = matrixB.GetLength(0);
+            int colsB = matrixB.GetLength(1);
+
+            if (rowsA != rowsB || colsA != colsB)
+            {
+                throw new ArgumentException("Matrix sizes must match for addition.");
+            }
+
+            int[,] result= new int[rowsA, colsA];
+            for (int i = 0; i<rowsA; i++)
+            {
+                for(int j = 0; j < colsA; j++)
+                {
+                    result[i,j] = matrixA[i, j] + matrixB[i, j];
+                }
+            }
+            return result;
+        }
+
+        public static int[,] MultiplyMatrix(int[,] matrixA, int[,] matrixB)
+        {
+            int rowsA = matrixA.GetLength(0);
+            int colsA = matrixA.GetLength(1);
+            int rowsB = matrixB.GetLength(0);
+            int colsB = matrixB.GetLength(1);
+
+            if (colsA != rowsB)
+                throw new ArgumentException("Number of columns in first matrix must equal number of rows in second matrix.");
+
+            int[,] result = new int[rowsA, colsB];
+
+            for (int i = 0; i < rowsA; i++)
+                for (int j = 0; j < colsB; j++)
+                    for (int k = 0; k < colsA; k++)
+                        result[i, j] += matrixA[i, k] * matrixB[k, j];
+
+            return result;
+        }
     }
 }

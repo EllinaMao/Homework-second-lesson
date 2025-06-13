@@ -1,4 +1,4 @@
-﻿using homework;
+﻿using Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace Hw
             for (int i = 0; i < a.Length; i++)
             {
                 Console.WriteLine($"Введите элемент {i + 1} из {a.Length}: ");
-                a[i] = homework.UserInput.GetIntFromUser();
+                a[i] = Input.UserInput.GetIntFromUser();
             }
         }
 
