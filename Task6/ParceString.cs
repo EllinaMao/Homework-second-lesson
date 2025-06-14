@@ -19,30 +19,6 @@ namespace Task6
 {
     internal class ParceString
     {
-        public static string Task6(string source)
-        {
-            var sb = new StringBuilder(source.Length);
-            bool newSentence = true;
 
-            foreach (char c in source)
-            {
-                if (newSentence && char.IsLetter(c))
-                {
-                    sb.Append(char.ToUpper(c));
-                    newSentence = false;
-                }
-                else
-                {
-                    sb.Append(c);
-                }
-
-                if (c == '.' || c == '!' || c == '?')
-                    newSentence = true;
-                else if (!char.IsWhiteSpace(c) && c != '.' && c != '!' && c != '?')
-                    newSentence = false;
-            }
-
-            return sb.ToString();
-        }
     }
 }
