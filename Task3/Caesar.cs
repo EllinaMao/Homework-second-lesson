@@ -70,7 +70,6 @@ namespace Task3
                 return;
             }
             var decripted = new StringBuilder(Source.Length);//что бы не выделять каждый раз память
-
             foreach (char l in Source)
             {
                 if (char.IsLetter(l))
