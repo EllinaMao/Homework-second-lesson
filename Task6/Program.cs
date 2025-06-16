@@ -19,7 +19,7 @@
             Console.WriteLine("Введите какой то текст");
             string UserInput = Input.UserInput.GetStringFromUser();
             //string UserInput = " Например, если пользователь ввёл: «today is a good\r\n day for walking. i will try to walk near the sea».\r\n Результат работы приложения: «Today is a good day\r\n for walking. I will try to walk near the sea».";
-            string result = ParceString.m1(UserInput);
+            string result = ParceString.AddCapitalLetters(UserInput);
             Console.WriteLine(result);
         }
     }

@@ -37,14 +37,16 @@
         static void Main(string[] args)
         {
             string source = "To be, or not to be, that is the question,\r\n Whether 'tis nobler in the mind to suffer\r\n The slings and arrows of outrageous fortune,\r\n Or to take arms against a sea of troubles,\r\n And by opposing end them? To die: to sleep;\r\n No more; and by a sleep to say we end\r\n The heart-ache and the thousand natural shocks\r\n That flesh is heir to, 'tis a consummation\r\n Devoutly to be wish'd. To die, to sleep";
-          
+            /*
+             * https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.escape?view=net-9.0*/
             string[] banned =
             {"die",
             "take",
             "heart"
             };
-
-            string result = Task6.ParceString.m2(source, banned);
+            char swap = '*';
+            string result = Task6.ParceString.BanWords(source, banned, swap);
+            Console.WriteLine(result);
 
         }
     }

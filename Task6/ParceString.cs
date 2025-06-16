@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace Task6
 {
     public class ParceString
     {
-        internal static string m1(string source)
+        internal static string AddCapitalLetters(string source)
         {
             // \s - пробельный символ
             // * - ноль или более раз (Квантификатор в регулярных выражениях — это специальный символ или последовательность, которая указывает, сколько раз должен повторяться предыдущий элемент (символ, группа или класс символов). например \s* - ноль или более пробельных символов
@@ -49,12 +50,38 @@ namespace Task6
         }
 
 
-        public static string m2(string source, string[] bannedwords ) {
+        public static string BanWords(string source, string[] bannedwords, char toswap)
+        {
+            //.Where =- возвращает тру фалс
+            /*
+             Escapes a minimal set of characters (\, *, +, ?, |, {, [, (,), ^, $, ., #, and white space) by replacing them with their escape codes. This instructs the regular expression engine to interpret these characters literally rather than as metacharacters.
+            
+            $@"..." — это интерполированная строка с поддержкой escape-последовательностей для регулярных выражений.
+            \b — это граница слова в регулярных выражениях. Она гарантирует, что поиск будет совпадать только с целым словом, а не его частью. Например, die не совпадёт с diet или side.
+            RegexOptions.IgnoreCase
+            Игнорирует регистр символов при поиске совпадений.*/
 
-            var parce = @"([\p{L}])";
 
-
-            return "";
+            foreach (var ban in bannedwords)
+            {
+                var parce = $@"\b{Regex.Escape(ban)}\b";
+                source = Regex.Replace(source, parce, lambda =>
+                {
+                    return new string(toswap, ban.Length);
+                }, RegexOptions.IgnoreCase);
+            }
+            return source;
         }
+
+
+
+
+
+
+
     }
 }
+
+
+
+
